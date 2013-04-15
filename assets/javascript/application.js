@@ -15,8 +15,8 @@
  */
  app.config(['$routeProvider', function($routeProvider) {
    $routeProvider.
-   when('/groups',          {templateUrl: 'partials/group_list.html',   controller: GroupListCtrl}).
-   when('/groups/:groupId', {templateUrl: 'partials/group_detail.html', controller: GroupDetailCtrl}).
+   when('/facebook-api-angular/groups',          {templateUrl: 'partials/group_list.html',   controller: GroupListCtrl}).
+   when('/facebook-api-angular/groups/:groupId', {templateUrl: 'partials/group_detail.html', controller: GroupDetailCtrl}).
    otherwise({redirectTo: '/groups'});
  }]);
 
