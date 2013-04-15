@@ -1,0 +1,32 @@
+<form ng-submit="search()">
+	<h1>Favourites</h1>
+	<ul class="groups">
+		<p ng-show="!favorites.length">No favorites added yet</p>
+		<li ng-repeat="favorite in favorites">      
+			<img ng-src="https://graph.facebook.com/{{favorite.id}}/picture?width=100&height=100" class="search_photo"/>
+			<a href="index.html#/groups/{{favorite.id}}">{{favorite.name}}</a>
+
+			<a href="#" class="favorite" ng-click="remove_favorite(favorite.id, favorite.name)">Remove favourite</a>
+		</li>
+	</ul>
+
+	<div class="search">
+		<input type="text" ng-model="query" placeholder="Search for group" name="text" />
+		<input type="submit" id="submit" value="Submit" />
+	</div>
+
+	<h1>Search result</h1>
+	<nav>
+		<a href="#" class="prev" ng-click="previous()">Previous</a>
+		<a href="#" class="next" ng-click="next()">Next</a>
+	</nav>
+	
+
+	<ul class="groups">
+		<li ng-repeat="group in groups" >      
+			<img ng-src="https://graph.facebook.com/{{group.id}}/picture?width=100&height=100" class="search_photo"/>
+			<a href="index.html#/groups/{{group.id}}">{{group.name}}</a>
+			<a href="#" class="favorite" ng-click="add_favorite(group.id, group.name)">Favourite</a>
+		</li>
+	</ul>
+</form>

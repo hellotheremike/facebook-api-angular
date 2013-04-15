@@ -1,0 +1,33 @@
+<div class="detail" >
+	<div ng-switch on="cover.source">
+		<div ng-switch-when="null" class="cover_photo"  >
+			<img ng-src="{{profile_picture}}" />
+		</div>
+		<div ng-switch-default class="cover_photo" style="background-image:url({{cover.source}});">
+			<img ng-src="{{profile_picture}}" />	
+		</div>
+	</div>
+
+	<div class="info">
+		<div class="general">
+			<p class="desc">Location</p>
+			<p>{{location || "undefined"}}</p>
+			<p class="desc">Category</p>
+			<p>{{category}}</p>
+		</div>
+		<div class="likes">
+			<p><b>{{likes}}</b> likes</p>
+		</div>
+		<div class="pages">
+			<p class="desc">Sites</p>
+			<a ng-repeat="website in websites" href="{{website}}"> {{website}}</a>
+		</div>
+	</div>
+
+	<p>{{bio}}</p>
+	<p>{{about}}</p>
+
+	<div class="photo_stream">
+		<img class="images"  ng-repeat="image in images" ng-src="{{image.source}}" update-masonry/>
+	</div>
+</div>
