@@ -19,6 +19,7 @@ function GroupListCtrl($scope, $http, Cache) {
 		var url = 'https://graph.facebook.com/search?q=' + $scope.query +  '&type=page'
     Cache.put("search", $scope.query)
     getSearchResult(url);
+    event.preventDefault();
   }
 
   // loads the next-page searchresult
@@ -46,6 +47,7 @@ function GroupListCtrl($scope, $http, Cache) {
         }
       });
     }
+    console.log(query)
   }
 
   // when user return to startpage fetch searchresults
