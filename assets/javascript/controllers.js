@@ -16,7 +16,7 @@ function GroupListCtrl($scope, $http, Cache) {
 
   // searchfunction 
 	$scope.search = function(){
-		var url = 'https://graph.facebook.com/search?q=' + $scope.query +  '&type=page'
+		var url = 'http://graph.facebook.com/search?q=' + $scope.query +  '&type=page'
     Cache.put("search", $scope.query)
     getSearchResult(url);
     event.preventDefault();
